@@ -55,6 +55,8 @@
 CREATE OR REFRESH STREAMING LIVE TABLE sales_orders_raw
 COMMENT "The raw sales orders, ingested from retail-org/sales_orders."
 AS SELECT * FROM cloud_files("${datasets_path}/retail-org/sales_orders", "json", map("cloudFiles.inferColumnTypes", "true"))
+-- The code works when start the pipeline as what's instructed in DE 8.1.1
+-- variable datasets_path is defined and passed when the pipeline is created in DE 8.1.1
 
 -- COMMAND ----------
 
@@ -66,6 +68,12 @@ AS SELECT * FROM cloud_files("${datasets_path}/retail-org/sales_orders", "json",
 -- MAGIC **`customers`** presents CSV customer data found in **retail-org/customers**.
 -- MAGIC 
 -- MAGIC This table will soon be used in a join operation to look up customer data based on sales records.
+
+-- COMMAND ----------
+
+-- # %python
+-- # datasets_path = 'dbfs:/mnt/dbacademy-datasets/data-engineering-with-databricks/v02'
+-- # dbutils.fs.ls(f"{datasets_path}/retail-org/")
 
 -- COMMAND ----------
 

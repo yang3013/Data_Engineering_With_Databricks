@@ -17,6 +17,11 @@ display(files)
 
 # COMMAND ----------
 
+files = dbutils.fs.ls(f"{DA.paths.storage_location}/autoloader")
+display(files)
+
+# COMMAND ----------
+
 # MAGIC %md <i18n value="4b109d6f-b0d4-4ded-ac54-a12f722599a9"/>
 # MAGIC 
 # MAGIC 
@@ -73,3 +78,8 @@ display(files)
 # COMMAND ----------
 
 DA.cleanup()
+
+
+# COMMAND ----------
+
+

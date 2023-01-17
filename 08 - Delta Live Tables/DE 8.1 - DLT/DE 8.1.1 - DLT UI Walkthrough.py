@@ -91,10 +91,6 @@ DA.print_pipeline_config()
 
 # COMMAND ----------
 
-DA.validate_pipeline_config()
-
-# COMMAND ----------
-
 # MAGIC %md <i18n value="a7e4b2fc-83a1-4509-8269-9a4c5791de21"/>
 # MAGIC 
 # MAGIC 
@@ -110,6 +106,10 @@ DA.validate_pipeline_config()
 # MAGIC The initial run will take several minutes while a cluster is provisioned. 
 # MAGIC 
 # MAGIC Subsequent runs will be appreciably quicker.
+
+# COMMAND ----------
+
+DA.validate_pipeline_config()
 
 # COMMAND ----------
 
